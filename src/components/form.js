@@ -56,7 +56,11 @@ function Form(props) {
         <Button
           variant="contained"
           size="medium"
-          onClick={() => props.handleGetFormData(input)}
+          onClick={() => {
+            props.handleGetFormData(input);
+            setInput({ title: "", desc: "" });
+          }}
+          disabled={!input.title || !input.desc}
         >
           Add
         </Button>

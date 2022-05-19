@@ -8,6 +8,7 @@ function App() {
   const [formData, setFormData] = useState({});
   const handleGetFormData = (formData) => {
     setFormData({ id: Math.random(), ...formData });
+
     // console.log("from app file", formData);
   };
 

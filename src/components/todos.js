@@ -9,12 +9,19 @@ import Button from "@mui/material/Button";
 function Todos(props) {
   const [formDataArr, setFormDataArr] = useState([]);
   const handleSetFormDataArr = () => {
-    setFormDataArr([...formDataArr, props.formData]);
+    !props.formData.title || !props.formData.desc
+      ? setFormDataArr([...formDataArr])
+      : setFormDataArr([...formDataArr, props.formData]);
   };
   useEffect(() => {
     handleSetFormDataArr();
   }, [props.formData]);
   console.log(formDataArr);
+
+  const handleClearAll = () => {
+    setFormDataArr([]);
+  };
+
   return (
     <div className="todos-prnt">
       <h2>ToDo List</h2>
@@ -22,7 +29,7 @@ function Todos(props) {
       {formDataArr.map((v, i) => (
         <ToDoItem title={v.title} desc={v.desc} change={props.formData} />
       ))}
-      <Button variant="contained" color="success">
+      <Button variant="contained" color="success" onClick={handleClearAll}>
         Clear All
       </Button>
     </div>
