@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main {
+    margin: 0 auto;
+    width: 50%;
+    text-align: center;
+}
+.list-main {
+    margin: 10px;
+}
+div.list-item {
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn {
+    margin: 2px;
+}
+#btn-update{
+    display: none;
+}
+span#s-no {
+    background-color: red;
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    border-radius: 30px;
+    color: white;
+    margin: 5px;
+    line-height: 25px;
+}
+    </style>
+</head>
+<body>
+    
+    <div class="main">
+        <div class="user-data">
+            <input type="text" class="user-inpt">
+            <button class="add" id="btn-add" onclick="handleAdd()">Add</button>
+            <button class="update" id="btn-update" onclick="handleUpdate()">Update</button>
+        </div>
+        <div class="list-main">
+            
+        </div>
+    </div>
+
+
+    <script src="./app.js"></script>
+</body>
+</html>
